@@ -7,7 +7,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pageobjects.*;
 
@@ -74,6 +73,8 @@ public class StepDefinitions {
     @When("User should be able to search for product {string}")
     public void userShouldBeAbleToSearchForProduct(String productName) {
         landingPageObject.searchForProduct(productName);
+        
+        
     }
 
     @Then("Product page should be displayed with title {string}")
@@ -145,4 +146,24 @@ public class StepDefinitions {
     }
 
 
+
+
+    @And("click on AddMoney")
+    public void clickOnAddMoney() {
+        amazonPayPageObject.clickOnAddMoney();
+    }
+
+    @Then("should ask for login with title {string}")
+    public void shouldAskForLoginWithTitle(String expectedTitle ) {
+        amazonPayPageObject.amazonSignInPageTitle(expectedTitle);
+    }
+
+    @And("User should be able to apply sort feature price low to high")
+    public void userShouldBeAbleToApplySortFeaturePriceLowToHigh() {
+        searchPageObject.sortFeature();
+    }
+
+    @Then("User is able to apply sort feature price low to high")
+    public void userIsAbleToApplySortFeaturePriceLowToHigh() {
+    }
 }

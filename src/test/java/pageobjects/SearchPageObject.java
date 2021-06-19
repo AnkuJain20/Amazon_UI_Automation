@@ -13,6 +13,8 @@ public class SearchPageObject {
     By brandFilter =By.xpath("//*[@id='p_89/OnePlus']/span/a/span");
     By filterCriterialSelected = By.xpath("//*[@id='p_36/1318506031']/span/a/span");
     By brandSelectedCheckbx = By.xpath("//*[@id='p_89/OnePlus']/span/a/div/label/input");
+    By sortFeature = (By.xpath("//span[@id='a-autoid-0-announce']"));
+    By priceLowToHigh = (By.xpath("//a[@id='s-result-sort-select_1']"));
 
     public SearchPageObject(WebDriver driver){
         this.driver = driver;
@@ -37,4 +39,11 @@ public class SearchPageObject {
         boolean isSelected = driver.findElement(brandSelectedCheckbx).isSelected();
         Assert.assertTrue(isSelected);
     }
+    public void sortFeature(){
+        driver.findElement(sortFeature).click();
+        driver.findElement(priceLowToHigh).click();
+    }
+
+
+
 }

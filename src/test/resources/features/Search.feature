@@ -22,3 +22,8 @@ Feature: Validate search functionality
     Examples:
       | productName | brand |
        | phone      | OnePlus |
+
+    Scenario: Check Sort Feature in which price is from low to high
+      When User should be able to search for product "phone"
+      And User should be able to apply sort feature price low to high
+      Then User is able to apply sort feature price low to high
