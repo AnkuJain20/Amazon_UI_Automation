@@ -1,18 +1,20 @@
 package base;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
+@Log4j2
 public class WebDriverFactory {
 
     private static WebDriver driver=null;
 
     public static WebDriver getWebDriverForBrowser() throws Exception {
         String browser = BaseClass.getBrowser().toLowerCase();
-        System.out.println("WebDriverFactory->getWebDriverForBrowser");
+        log.info("WebDriverFactory->getWebDriverForBrowser");
 
         if(browser.equals("firefox")){
             System.setProperty("webdriver.gecko.driver","src/test/resources/geckodriver.exe");
@@ -24,12 +26,5 @@ public class WebDriverFactory {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver;
-    }
-
-    public static void quitDriver(){
-        String browser = BaseClass.getBrowser().toLowerCase();
-        if(browser.equals("chrome")){
-            driver.quit();
-        }
     }
 }

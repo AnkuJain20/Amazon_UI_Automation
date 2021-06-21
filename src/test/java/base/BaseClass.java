@@ -1,15 +1,17 @@
 package base;
 
+import lombok.extern.log4j.Log4j2;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Properties;
+
 
 public class BaseClass {
 
     private static  String browser;
 
     static {
-        System.out.println("Reading properties file");
         Properties properties = readPropertiesFile();
         browser  = properties.getProperty("browserName");
     }
@@ -18,7 +20,6 @@ public class BaseClass {
         BufferedReader reader;
         Properties properties = null;
         String propertyFilePath = "src/test/resources/configuration.properties";
-
         try {
             FileReader fileReader = new FileReader(propertyFilePath);
             reader = new BufferedReader(fileReader);

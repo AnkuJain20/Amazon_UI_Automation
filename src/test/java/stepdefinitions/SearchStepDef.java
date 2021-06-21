@@ -4,7 +4,10 @@ import base.TestContext;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import lombok.extern.log4j.Log4j2;
 
+
+@Log4j2
 public class SearchStepDef {
 
     TestContext testContext;
@@ -18,6 +21,8 @@ public class SearchStepDef {
     @And("User should be able to apply search filter {string} and {string}")
     public void userShouldBeAbleToApplySearchFilterAnd(String minPrice, String maxPrice) {
         testContext.searchPageObject.applyPriceFilter(minPrice,maxPrice);
+        log.info("applying filter  min range   " + minPrice);
+        scn.log("Running the scenarios: " + scn.getName());
     }
 
 

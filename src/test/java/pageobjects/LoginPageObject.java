@@ -1,9 +1,12 @@
 package pageobjects;
 
+import lombok.extern.log4j.Log4j2;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
+@Log4j2
 public class LoginPageObject {
     WebDriver driver;
 

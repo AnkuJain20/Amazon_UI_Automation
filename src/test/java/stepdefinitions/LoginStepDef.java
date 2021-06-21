@@ -5,7 +5,10 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lombok.extern.log4j.Log4j2;
 
+
+@Log4j2
 public class LoginStepDef {
 
     TestContext testContext;
@@ -19,10 +22,8 @@ public class LoginStepDef {
 
     @Given("User is on the landing page with URL {string}")
     public void user_is_on_the_landing_page_with_url(String url) {
-//        ExtentTest test= extent.createTest("user_is_on_the_landing_page_with_url");
         testContext.loginPageObject.openUrl(url);
-//        test.fail("Result generated");
-//        extent.flush();
+        scn.log("Browser navigated to URL: " + url);
     }
 
     @Then("close the browser")

@@ -1,8 +1,10 @@
 package pageobjects;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class AddToCartPageObject {
 
     WebDriver driver;
@@ -14,21 +16,4 @@ public class AddToCartPageObject {
         this.driver = driver;
     }
 
-
-    public void selectProductAndClickOnCart() {
-        driver.findElement(selectProductText).click();
-    }
-
-    public void checkProductInCart() {
-
-
-//        Select select = new Select(driver.findElement(By.id("quantity")));
-//        select.selectByIndex(1);
-
-//        driver.switchTo().window(parentId);
-
-
-//        String addToCart = "//*[@id='add-to-cart-button']";
-//        driver.findElement(By.xpath(addToCart)).click();
-    }
 }

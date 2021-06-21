@@ -1,4 +1,4 @@
-Feature: Validate Login Page
+Feature: Validate landing page
 
 Background:
   Given User is on the landing page with URL "https://www.amazon.in/"
