@@ -6,14 +6,12 @@ Background:
 
   Scenario: Open Amazon home page
     Then Home Page should display with title "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in"
-    And close the browser
 
 
 
   Scenario Outline:: Search for a Product
     When User should be able to search for product "<productName>"
     Then Product page should be displayed with title "<pageTitle>"
-    And close the browser
 
     Examples:
       | productName | pageTitle |
@@ -31,7 +29,6 @@ Background:
     And user should be able to enter pincode "560103"
     And user should able to click on apply
     Then user should see the updated address
-    And close the browser
 
 
 #  Scenario: check Search bar exists

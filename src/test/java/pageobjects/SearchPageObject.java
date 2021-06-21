@@ -33,6 +33,7 @@ public class SearchPageObject {
     public void checkFilterApplied() {
         String text = driver.findElement(filterCriterialSelected).getText();
         Assert.assertTrue(text.contains("10,000"));
+
     }
 
     public void readSelectedBrandFilter() {

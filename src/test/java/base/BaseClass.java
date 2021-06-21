@@ -9,17 +9,15 @@ public class BaseClass {
     private static  String browser;
 
     static {
-        //Read properties file
+        System.out.println("Reading properties file");
         Properties properties = readPropertiesFile();
         browser  = properties.getProperty("browserName");
     }
 
     private static Properties readPropertiesFile() {
         BufferedReader reader;
-
         Properties properties = null;
         String propertyFilePath = "src/test/resources/configuration.properties";
-
 
         try {
             FileReader fileReader = new FileReader(propertyFilePath);
@@ -38,4 +36,7 @@ public class BaseClass {
     public static String getBrowser() {
         return browser;
     }
+
+
+
 }

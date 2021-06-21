@@ -28,6 +28,7 @@ public class AmazonPayPageObject {
     public  void clickOnAddMoney(){
         driver.findElement(addMoney).click();
     }
+
     public void amazonSignInPageTitle(String expectedTitle){
         String signInTitle = driver.getTitle();
         System.out.println(signInTitle);

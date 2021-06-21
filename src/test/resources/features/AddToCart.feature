@@ -8,4 +8,3 @@ Feature: Validate AddToCart functionality
     When User should be able to search for product "Samsung Galaxy M12 (Black,6GB RAM, 128GB Storage) 6000 mAh with 8nm Processor | True 48 MP Quad Camera | 90Hz Refresh Rate"
     And  click on cart
     Then product should be in cart
-    And close the browser

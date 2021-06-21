@@ -7,7 +7,6 @@ Feature: Validate search functionality
     When User should be able to search for product "<productName>"
     And  User should be able to apply search filter "<minPrice>" and "<maxPrice>"
     Then check filter is applied
-    And close the browser
 
     Examples:
       | productName | minPrice | maxPrice |
@@ -18,7 +17,6 @@ Feature: Validate search functionality
     When User should be able to search for product "<productName>"
     And  User should be able to apply search filter "<brand>"
     Then check brand is selected in filter criteria
-    And close the browser
     Examples:
       | productName | brand |
        | phone      | OnePlus |

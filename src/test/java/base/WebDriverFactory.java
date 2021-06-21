@@ -12,6 +12,7 @@ public class WebDriverFactory {
 
     public static WebDriver getWebDriverForBrowser() throws Exception {
         String browser = BaseClass.getBrowser().toLowerCase();
+        System.out.println("WebDriverFactory->getWebDriverForBrowser");
 
         if(browser.equals("firefox")){
             System.setProperty("webdriver.gecko.driver","src/test/resources/geckodriver.exe");
